@@ -1,0 +1,261 @@
+
+
+@mixin irSet {
+	text-indent: -9999px;
+	background-position: center center;
+	background-repeat: no-repeat;
+};
+@mixin flexSet($dir:row,$wrp:nowrap) {
+	display: flex;
+	flex-direction: $dir;
+	flex-wrap: $wrp;
+};
+header{
+	width:100%;
+	min-width:1200px;
+	margin:0 auto;
+	background-color: #000;
+	// border: 1px solid red;
+
+	>.top-nav{
+		width:100%;
+		border-bottom: 1px solid #303030;
+		>.top-nav-inner{
+			@include flexSet;
+			justify-content: space-between;
+			width:1200px;
+			min-width:1200px;
+			height:41px;
+			margin:0 auto;
+			color: #84847D;
+			line-height: 41px;
+			>.left{
+				padding-left:20px;
+				border: 1px solid #000;
+				>a{
+					display:block;
+					color: #84847D;
+					font-weight: 800;
+				}
+			}
+			>.right{
+				position:relative;
+				@include flexSet;
+				width:450px;
+				border: 1px solid #000;
+				>.search{
+					margin-right:60px;
+
+				}
+				>a{
+					margin-right:36px;
+					color: #84847D;
+					
+				}
+				> .search {
+					position: relative;
+				}
+				> .search:after {
+					content: '';
+					display: block;
+					position: absolute;
+					right: -18px;
+					top: 50%;
+					width: 12px;
+					height: 12px;
+					margin-top: -6px;
+					background-image: url(../images/ico_search_gr_12x12.png);
+					background-repeat: no-repeat;
+				}
+				> .lang {
+					position: relative;
+				}
+				> .lang:before {
+					content: '';
+					display: block;
+					position: absolute;
+					left: -23px;
+					top: 50%;
+					width: 18px;
+					height: 12px;
+					margin-top: -6px;
+					background-image: url(../images/ico_kor_16x11.png);
+					background-repeat: no-repeat;
+				}
+				>.account{
+					position:relative;
+				}
+				> .account:before {
+					content: '';
+					display: block;
+					position: absolute;
+					left: -18px;
+					top: 50%;
+					width: 13px;
+					height: 12px;
+					margin-top: -6px;
+					background-image: url(../images/ico_account_gr_13x12.png);
+					background-repeat: no-repeat;
+				}
+				>.store{
+					position:absolute;
+					right:12px;
+					top:4px;
+					width:138px;
+					height:30px;
+					padding-left:15px;
+					color: #FFF;
+					background:none;
+					background-color: #E30610;
+					border:none;
+					border-radius: 2px;
+					outline:none;
+				}
+				> .store:before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 12px;
+					width: 12px;
+					height: 12px;
+					margin-top: -6px;
+					background-image: url(../images/ico_cart_wt_12x12.png);
+					background-repeat: no-repeat;
+				}
+			}
+		}
+	
+
+	}//End of .top-nav
+	>.con-nav{
+		border-bottom: 1px solid #303030;
+
+		>.con-nav-inner{
+			@include flexSet;
+			position:relative;
+			width:1200px;
+			min-width:1200px;
+			margin: 0 auto;
+			>.logo{
+				>a{
+					display:block;
+					width:48px;
+					height:80px;
+					padding-left:40px;
+					@include irSet;
+					background-image: url(../images/logo_leica_48x48.png);
+				}
+			}//End of logo
+			//네비게이션 시작
+			.gnb{
+				height:80px;
+				// border-bottom: 1px solid #303030;
+				>ul{
+					// border: 1px solid #ff0;
+					>li{
+						float:left;
+						>a{
+							display:block;
+							height:80px;
+							padding:30px 30px;
+							color: #fff;
+						}
+						
+						
+						>.lnb{
+							display:none;
+							position:absolute;
+							top:81px;
+							width:100%;
+							height:72px;
+							line-height: 72px;
+							z-index: 100;
+							>li{
+								float:left;
+								padding-right:30px;
+								font-size: 14px;
+								>a{
+									color: #fff;
+								}
+							}
+						}
+				
+						
+						>.lnb_1{
+							
+							// display:block;
+							left:120px;
+							
+						}
+						>.lnb_2{
+							left:120px;
+						}
+						>.lnb_3{
+							left:120px;
+							
+						}
+						>.lnb_4{
+							display:none;
+							
+						}
+						>.lnb_5{
+							left:120px;
+
+						}
+						
+
+					}
+					li:hover>a{
+						color:#E30610;
+					}
+				}
+				
+			}
+			>.cart{
+				
+				position:absolute;
+				top:50%;
+				right:30px;
+				margin-top:-9px;
+				>a{
+					display:block;
+					position:relative;
+					width:18px;
+					height:18px;
+					background-image: url(../images/ico_cart_wt_18x18.png);
+					>span{
+						display:block;
+						position:absolute;
+						top:-5px;
+						left:14px;
+						width:18px;
+						height:18px;
+						line-height: 18px;
+						text-align: center;
+						color:#fff;
+						font-weight: 800;
+						background-color: #E30610;
+						border-radius: 9px;
+					}
+				}
+				
+			}
+			
+
+			
+		}
+	}//End of .con-nav
+	//서브메뉴 배경판
+	>.bg_lnb{
+		display:none;
+		position:absolute;
+		top:123px;
+		width:100%;
+		height:72px;
+		background-color: #000;
+		z-index:90;
+	}
+} //End of Header
+
+
